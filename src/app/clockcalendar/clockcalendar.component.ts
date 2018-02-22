@@ -39,12 +39,10 @@ export class ClockcalendarComponent implements OnInit {
         this.checkDateFormat = true;
       }
 
-  }
+    }
 
   changeClockDate (event) {
     event.preventDefault(false);
     this.checkClockDate = !this.checkClockDate;
   }
-
-
 }
