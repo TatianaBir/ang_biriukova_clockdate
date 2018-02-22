@@ -12,8 +12,8 @@ export class ClockcalendarComponent implements OnInit {
   dateFormat = 'dd.MM.yyy';
 
   constructor() {
-
   }
+  
   ngOnInit() {
     setInterval(() => {
       this.nowDate = Date.now();
