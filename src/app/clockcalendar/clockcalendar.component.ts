@@ -21,8 +21,11 @@ export class ClockcalendarComponent implements OnInit {
   }
 
   changeClock () {
-    this.clockFormat = this.clockFormat === 'HH:mm' ? 'HH:mm:ss' : 'HH:mm';
-    this.dateFormat = this.dateFormat === 'MM/dd/yy' ? 'dd.MM.yyy' : 'MM/dd/yy';
+      if (this.checkClockDate) {
+        this.clockFormat = this.clockFormat === 'HH:mm' ? 'HH:mm:ss' : 'HH:mm';
+      } else {
+        this.dateFormat = this.dateFormat === 'MM/dd/yy' ? 'dd.MM.yyy' : 'MM/dd/yy';
+      }
     }
 
   changeClockDate (event) {
