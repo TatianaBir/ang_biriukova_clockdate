@@ -6,8 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./clockcalendar.component.css']
 })
 export class ClockcalendarComponent implements OnInit {
-  checkClockFormat = true;
-  checkDateFormat = true;
   checkClockDate = true;
   nowDate;
   clockFormat = 'HH:mm:ss';
@@ -23,22 +21,8 @@ export class ClockcalendarComponent implements OnInit {
   }
 
   changeClock () {
-      if (this.checkClockFormat) {
-        this.clockFormat = 'HH:mm';
-        this.checkClockFormat = false;
-      } else {
-        this.clockFormat = 'HH:mm:ss';
-        this.checkClockFormat = true;
-      }
-
-      if (this.checkDateFormat) {
-        this.dateFormat = 'MM/dd/yy';
-        this.checkDateFormat = false;
-      } else {
-        this.dateFormat = 'dd.MM.yyy';
-        this.checkDateFormat = true;
-      }
-
+    this.clockFormat = this.clockFormat === 'HH:mm' ? 'HH:mm:ss' : 'HH:mm';
+    this.dateFormat = this.dateFormat === 'MM/dd/yy' ? 'dd.MM.yyy' : 'MM/dd/yy';
     }
 
   changeClockDate (event) {
